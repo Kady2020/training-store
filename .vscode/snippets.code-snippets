@@ -1,0 +1,91 @@
+{
+  "margin": {
+    "prefix": "mn",
+    "body": [
+      "margin: 0 0 0 0;"
+    ],
+    "description": "margin"
+  },
+  "padding": {
+    "prefix": "pd",
+    "body": [
+      "padding: 0 0 0 0;"
+    ],
+    "description": "padding"
+  },
+  "comment": {
+    "prefix": "--",
+    "body": [
+      "<!-- ! -->"
+    ],
+    "description": "comment"
+  },
+  "transform2d": {
+    "prefix": "2d",
+    "body": [
+      "transform: translate(0px, 0px) scale(1, 1) rotate(0deg) /*rotateX(0deg) rotateY(0deg)*/ skew(0deg, 0deg);",
+      "transform-origin: 0px 0px; /*top left right bottom center*/",
+      "transform: matrix(0, 0, 0, 0, 0, 0); /*scaleX, skewY, skewX, scaleY, translateX, translateY*/",
+      "perspective-origin: 50% 50%; /*Для родителя*/",
+      "perspective: 400px; /*Для родителя*/",
+      "transform: perspective(400px) rotateX(30deg); /*Для элемента*/"
+    ],
+    "description": "Transform2d"
+  },
+  "transform3d": {
+    "prefix": "3d",
+    "body": [
+      "transform: translate3D(0px, 0px, 0px) rotate3D(1, 1, 1, 0deg);",
+      "background: rgba(255, 255, 255, 0.2); /*Для родителя*/",
+      "transform-style: preserve-3d; /*Для родителя*/",
+      "transform: perspective(400px) rotateX(30deg); /*Для элемента*/"
+    ],
+    "description": "Transform3d"
+  },
+  "@media (min-width)": {
+    "prefix": "mmi",
+    "body": [
+      "@media (min-width: ) {}"
+    ],
+    "description": "@media (min-width)"
+  },
+  "@media (max-width)": {
+    "prefix": "mma",
+    "body": [
+      "@media (max-width: ) {}"
+    ],
+    "description": "@media (max-width)"
+  },
+  "position": {
+    "prefix": "psa",
+    "body": [
+      "position: absolute;",
+      "width: 100%;",
+      "height: 100%;",
+      "top: 0;",
+      "left: 0;"
+    ],
+    "description": "position"
+  },
+  "line height": {
+    "prefix": "lh",
+    "body": [
+      "line-height: calc(lh / fz * 100%);"
+    ],
+    "description": "line height"
+  },
+  "responsive font": {
+    "prefix": "rf",
+    "body": [
+      "@include respFz(, );"
+    ],
+    "description": "responsive font"
+  },
+  "responsive value": {
+    "prefix": "rv",
+    "body": [
+      "@include respValue(, , , 0);"
+    ],
+    "description": "responsive value"
+  },
+}

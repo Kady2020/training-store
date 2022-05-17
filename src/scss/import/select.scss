@@ -1,0 +1,76 @@
+.select {
+  position: relative;
+}
+
+.select__item {
+  position: relative;
+}
+
+.select__title {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  text-transform: capitalize;
+  color: #000;
+  cursor: pointer;
+}
+
+.select__value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  height: 50px;
+  font-size: 16px;
+  padding: 0px 20px;
+}
+
+.select__value span {
+  height: 1em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.select__value::before {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 7px;
+  background: url('@img/select/select.svg') center / 100% no-repeat;
+  transition: all 0.3s linear;
+}
+
+.select__options {
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  top: 47px;
+  left: 0;
+  border: 1px solid #ddd;
+  border-top: 0;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 0px 0px 5px 0px;
+  color: #000;
+}
+
+.select__option {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.select._active {
+  z-index: 5;
+}
+
+.select._active .select__value::before {
+  transform: rotate(-180deg);
+}
+
+.select._active.select__options {
+  display: block;
+}

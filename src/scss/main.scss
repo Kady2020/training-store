@@ -1,0 +1,127 @@
+/*==================== RESET STYLES ====================*/
+@import 'import/reset.scss';
+/*==================== RESET STYLES ====================*/
+
+/*==================== FONTS ====================*/
+@import 'fonts.scss';
+/*==================== FONTS ====================*/
+
+/*==================== VARIABLES ====================*/
+$maxWidthLayout: 1440;
+$maxWidthContainer: 1310;
+$gilroyFont: 'Gilroy', sans-serif;
+$whiteColor: #ffffff;
+$grayColor: #868686;
+$blackColor: #1a1a1a;
+/*==================== VARIABLES ====================*/
+
+/*==================== MIXINS ====================*/
+// responsive value
+@mixin respValue($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+  }
+}
+// snippet (rv)
+// responsive value
+/*==================== MIXINS ====================*/
+
+/*==================== BASIC PARAMETERS ====================*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $gilroyFont;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+  background: $whiteColor;
+  color: $blackColor;
+
+  @media (max-width: 768px) {
+    &.lock {
+      overflow: hidden;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.page {
+  flex: 1 1 auto;
+
+  &__block-name,
+  &__block-name {
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 90, 60, 1);
+    }
+  }
+
+  &:not(:last-child) {
+    @include respValue('margin-bottom', 120, 90, 1);
+  }
+}
+/*==================== BASIC PARAMETERS ====================*/
+
+/*==================== REPEAT BLOCK ====================*/
+
+//! container
+// .container {
+//   width: 100%;
+//   max-width: $maxWidthContainer + px;
+//   padding: 0 15px;
+//   margin: 0 auto;
+// }
+
+[class*='__container'] {
+  width: 100%;
+  max-width: $maxWidthContainer + px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+//! container
+
+//! responsive bg img
+@import 'import/ibg.scss';
+
+.ibg {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+//! responsive bg img
+
+/*==================== REPEAT BLOCK ====================*/
+
+/*==================== PARALLAX MATTHEW ====================*/
+// @import 'import/parallax-matthew.scss';
