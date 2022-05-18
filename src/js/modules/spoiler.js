@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  $('.block__title').click(function (event) {
-    if ($('.block').hasClass('one')) {
-      $('.block__title').not($(this)).removeClass('active');
-      $('.block__text').not($(this).next()).slideUp(300);
+  $('.menu__button').click(function (event) {
+    if ($('.block-name').hasClass('one')) {
+      $('.menu__links').not($(this)).removeClass('active');
+      $('.menu__links').not($(this).next()).slideUp(300);
     }
     $(this).toggleClass('active').next().slideToggle(300);
   });

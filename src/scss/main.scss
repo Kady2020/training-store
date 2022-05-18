@@ -4,6 +4,7 @@
 
 /*==================== FONTS ====================*/
 @import 'fonts.scss';
+@import 'import/icons.scss';
 /*==================== FONTS ====================*/
 
 /*==================== VARIABLES ====================*/
@@ -11,8 +12,9 @@ $maxWidthLayout: 1440;
 $maxWidthContainer: 1310;
 $gilroyFont: 'Gilroy', sans-serif;
 $whiteColor: #ffffff;
-$grayColor: #868686;
 $blackColor: #1a1a1a;
+$grayColor: #868686;
+$orangeColor: #fea803;
 /*==================== VARIABLES ====================*/
 
 /*==================== MIXINS ====================*/
@@ -121,7 +123,63 @@ body {
 }
 //! responsive bg img
 
+//! button
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 2px;
+  padding: 5px;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 13px;
+  color: $whiteColor;
+
+  &_bg-orange {
+    background: $orangeColor;
+  }
+
+  &_bg-black {
+    background: $blackColor;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(238, 238, 238, 0.7);
+    transform: translateX(-4em) skewX(-45deg);
+  }
+
+  &:hover {
+    &::before {
+      animation: highlight 0.6s linear;
+    }
+  }
+}
+
+@keyframes highlight {
+  0% {
+    transform: translateX(-4em) skewX(-45deg);
+  }
+  100% {
+    transform: translateX(20em) skewX(-45deg);
+  }
+}
+//! button
+
 /*==================== REPEAT BLOCK ====================*/
 
-/*==================== PARALLAX MATTHEW ====================*/
-// @import 'import/parallax-matthew.scss';
+@import 'import/header.scss';

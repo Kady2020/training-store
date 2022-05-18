@@ -1,0 +1,212 @@
+.header {
+  &__body {
+    display: grid;
+    grid-template: minmax(auto, 48px) minmax(auto, 178px) / 1fr;
+  }
+
+  &__top {
+  }
+
+  &__bottom {
+  }
+}
+
+.top-header {
+  background: #dfdede;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    gap: 15px;
+  }
+
+  &__icon {
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  &__location-text {
+    color: $grayColor;
+  }
+
+  &__location-city {
+    font-weight: 600;
+  }
+}
+
+.bottom-header {
+  &__container {
+    font-size: 13px;
+    padding: 20px 15px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template: 1fr / minmax(auto, 33.3333%) minmax(auto, 710px) minmax(auto, 200px);
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 767.98px) {
+      gap: 15px;
+    }
+  }
+
+  &__logo {
+    max-width: 80px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 425.98px) {
+      max-width: 60px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: flex-start;
+    @include respValue('gap', 60, 20, 1);
+  }
+
+  &__location,
+  &__email,
+  &__call {
+    flex: 0 1 33.3333%;
+    display: flex;
+    gap: 8px;
+
+    .icon-location,
+    .icon-email,
+    .icon-call {
+      color: $orangeColor;
+    }
+
+    @media (max-width: 991.98px) {
+      flex: 0 1 50%;
+    }
+
+    @media (max-width: 767.98px) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__location {
+    .icon-location {
+      transform: translateY(4px);
+      font-size: 24px;
+    }
+
+    @media (max-width: 991.98px) {
+      display: none;
+    }
+  }
+
+  &__location-text {
+    color: $grayColor;
+  }
+
+  &__email {
+    .icon-email {
+      font-size: 20px;
+    }
+
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+  }
+
+  &__email-text {
+    font-weight: 600;
+    @include respValue('font-size', 15, 13, 1);
+  }
+
+  &__call {
+    .icon-call {
+      transform: translateY(2px);
+      font-size: 22px;
+    }
+  }
+
+  &__call-text {
+    display: grid;
+    gap: 6px;
+
+    @media (max-width: 502px) {
+      align-items: center;
+    }
+  }
+
+  &__call-number {
+    font-weight: 600;
+    @include respValue('font-size', 15, 13, 1);
+  }
+
+  &__call-time {
+    color: $grayColor;
+
+    @media (max-width: 502px) {
+      display: none;
+    }
+  }
+
+  &__button {
+  }
+
+  &__menu {
+  }
+}
+
+.icon-email {
+}
+
+.icon-call {
+}
+
+.btn {
+  &_bg-orange {
+  }
+
+  &__item {
+  }
+}
+
+.menu {
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__button {
+  }
+
+  &__button-text {
+  }
+
+  &__button-arrow {
+  }
+
+  &__links {
+  }
+
+  &__link {
+  }
+}
+
+.search-box {
+}
+
+.search-btn {
+}
+
+.cancel-btn {
+}
