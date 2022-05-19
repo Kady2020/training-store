@@ -43,6 +43,8 @@
 
 .bottom-header {
   &__container {
+    display: grid;
+    gap: 20px;
     font-size: 13px;
     padding: 20px 15px;
   }
@@ -72,39 +74,39 @@
   }
 
   &__contacts {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    align-items: start;
+    justify-items: center;
     @include respValue('gap', 60, 20, 1);
+
+    @media (max-width: 991.98px) {
+      grid-template: 1fr / repeat(2, 1fr);
+    }
+
+    @media (max-width: 767.98px) {
+      grid-template: 1fr / 1fr;
+    }
   }
 
   &__location,
   &__email,
   &__call {
-    flex: 0 1 33.3333%;
-    display: flex;
+    display: grid;
+    grid-template: 1fr / auto 1fr;
+    align-items: start;
     gap: 8px;
 
     .icon-location,
     .icon-email,
     .icon-call {
+      align-items: flex-start;
       color: $orangeColor;
-    }
-
-    @media (max-width: 991.98px) {
-      flex: 0 1 50%;
-    }
-
-    @media (max-width: 767.98px) {
-      flex: 0 1 100%;
+      font-size: 30px;
     }
   }
 
   &__location {
-    .icon-location {
-      transform: translateY(4px);
-      font-size: 24px;
-    }
-
     @media (max-width: 991.98px) {
       display: none;
     }
@@ -115,9 +117,7 @@
   }
 
   &__email {
-    .icon-email {
-      font-size: 20px;
-    }
+    align-items: center;
 
     @media (max-width: 767.98px) {
       display: none;
@@ -130,19 +130,14 @@
   }
 
   &__call {
-    .icon-call {
-      transform: translateY(2px);
-      font-size: 22px;
+    @media (max-width: 502px) {
+      align-items: center;
     }
   }
 
   &__call-text {
     display: grid;
     gap: 6px;
-
-    @media (max-width: 502px) {
-      align-items: center;
-    }
   }
 
   &__call-number {
@@ -165,44 +160,93 @@
   }
 }
 
-.icon-email {
-}
-
-.icon-call {
-}
-
-.btn {
-  &_bg-orange {
-  }
-
-  &__item {
-  }
-}
-
 .menu {
   &__list {
+    display: grid;
+    grid-template: minmax(auto, 60px) / repeat(7, 1fr);
+    place-items: center;
   }
 
   &__item {
+    position: relative;
   }
 
   &__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+
+    &.active {
+      .menu__button-arrow {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__button-text {
   }
 
   &__button-arrow {
+    transition: all 0.2s linear;
   }
 
   &__links {
+    display: none;
+    position: absolute;
+    width: 150px;
+    top: 20px;
+    left: 0;
+    background: #dfdede;
+    border-radius: 2px;
+    padding: 5px;
+
+    > *:not(:last-child) {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__sub-link {
+    display: block;
+    font-size: 14px;
   }
 
   &__link {
+    font-weight: 500;
+    font-size: 15px;
   }
 }
 
 .search-box {
+  position: relative;
+  height: 30px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    background: #dfdede;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 15px;
+  }
+
+  .search-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    background: $orangeColor;
+    border-radius: 50%;
+    color: $blackColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
 }
 
 .search-btn {
