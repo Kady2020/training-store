@@ -1,5 +1,24 @@
-<header class="header">
+<!-- <script>
+  let headerScroll;
 
+  window.onscroll = function () {
+    headerScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (headerScroll > 170) {
+      $(".menu").css({
+        "background": "#fff", "position": "fixed", "width": "100%", "top": "0", "left": "0",
+        "padding-left": "20px", "padding-right": "20px", "padding-top": "7px", "padding-bottom": "7px"
+      });
+      $(".menu__item_logo").css({ "display": "block" });
+    }
+
+    if (170 > headerScroll) {
+      $(".menu").css({ "background": "none", "position": "static", "padding": "0px" });
+      $(".menu__item_logo").css({ "display": "none" });
+    }
+  }
+</script> -->
+
+<header class="header">
   <div class="header__body">
     <div class="header__top top-header">
       <div class="top-header__container">
@@ -48,6 +67,11 @@
         </div>
         <nav class="bottom-header__menu menu">
           <ul class="menu__list one">
+            <li class="menu__item menu__item_logo">
+              <a href="#" class="menu__logo">
+                <img src="@img/header/logo.png" alt="Логотип сайта">
+              </a>
+            </li>
             <li class="menu__item">
               <button class="menu__button menu__link">
                 <span class="menu__button-text">Услуги</span>
