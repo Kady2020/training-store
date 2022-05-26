@@ -50,7 +50,7 @@ body {
   font-family: $gilroyFont;
   font-weight: 400;
   font-size: 15px;
-  line-height: 1.2;
+  line-height: 1.1;
   background: $whiteColor;
   color: $blackColor;
 
@@ -221,3 +221,4 @@ body {
 /*==================== REPEAT BLOCK ====================*/
 
 @import 'import/header.scss';
+@import 'import/intro.scss';
