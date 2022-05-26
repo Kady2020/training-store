@@ -1,33 +1,13 @@
-<!-- <script>
-  let headerScroll;
-
-  window.onscroll = function () {
-    headerScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (headerScroll > 170) {
-      $(".menu").css({
-        "background": "#fff", "position": "fixed", "width": "100%", "top": "0", "left": "0",
-        "padding-left": "20px", "padding-right": "20px", "padding-top": "7px", "padding-bottom": "7px"
-      });
-      $(".menu__item_logo").css({ "display": "block" });
-    }
-
-    if (170 > headerScroll) {
-      $(".menu").css({ "background": "none", "position": "static", "padding": "0px" });
-      $(".menu__item_logo").css({ "display": "none" });
-    }
-  }
-</script> -->
-
 <header class="header">
   <div class="header__body">
     <div class="header__top top-header">
       <div class="top-header__container">
-        <div class="top-header__icon">
+        <a href="#" class="top-header__icon">
           <img src="@img/header/telegram.svg" alt="Telegram">
-        </div>
-        <div class="top-header__icon">
+        </a>
+        <a href="#" class="top-header__icon">
           <img src="@img/header/whatsapp.svg" alt="Whatsapp">
-        </div>
+        </a>
         <div class="top-header__location">
           <span class="top-header__location-text">Ваш город:</span>
           <span class="top-header__location-city">Москва</span>
@@ -37,7 +17,7 @@
     <div class="header__bottom bottom-header">
       <div class="bottom-header__container">
         <div class="bottom-header__body">
-          <a href="#" class="bottom-header__logo">
+          <a href="#" class="bottom-header__logo logo">
             <img src="@img/header/logo.png" alt="Логотип сайта">
           </a>
           <div class="bottom-header__contacts">
@@ -61,20 +41,23 @@
               </span>
             </a>
           </div>
-          <button class="bottom-header__button btn btn_bg-orange">
+          <button class="bottom-header__btn btn btn_bg-orange">
             <span class="btn__item">Заказать звонок</span>
+          </button>
+          <button class="bottom-header__burger burger">
+            <span class="burger__item"></span>
           </button>
         </div>
         <nav class="bottom-header__menu menu">
           <ul class="menu__list one">
-            <li class="menu__item menu__item_logo">
-              <a href="#" class="menu__logo">
+            <li class="menu__item menu__item_logo-dn">
+              <a href="#" class="logo">
                 <img src="@img/header/logo.png" alt="Логотип сайта">
               </a>
             </li>
             <li class="menu__item">
               <button class="menu__button menu__link">
-                <span class="menu__button-text">Услуги</span>
+                <span class="menu__button-text tdu tdu_oc">Услуги</span>
                 <ion-icon class="menu__button-arrow" name="chevron-down-outline"></ion-icon>
               </button>
               <div class="menu__links">
@@ -89,7 +72,7 @@
             </li>
             <li class="menu__item">
               <button class="menu__button menu__link">
-                <span class="menu__button-text">Компания</span>
+                <span class="menu__button-text tdu tdu_oc">Компания</span>
                 <ion-icon class="menu__button-arrow" name="chevron-down-outline"></ion-icon>
               </button>
               <div class="menu__links">
@@ -103,16 +86,16 @@
               </div>
             </li>
             <li class="menu__item">
-              <a href="" class="menu__link">Проекты</a>
+              <a href="" class="menu__link close-link tdu tdu_oc">Проекты</a>
             </li>
             <li class="menu__item">
-              <a href="" class="menu__link">Акции</a>
+              <a href="" class="menu__link close-link tdu tdu_oc">Акции</a>
             </li>
             <li class="menu__item">
-              <a href="" class="menu__link">Прайс-лист</a>
+              <a href="" class="menu__link close-link tdu tdu_oc">Прайс-лист</a>
             </li>
             <li class="menu__item">
-              <a href="" class="menu__link">Контакты</a>
+              <a href="" class="menu__link close-link tdu tdu_oc">Контакты</a>
             </li>
             <li class="menu__item">
               <div class="search-box">
@@ -125,10 +108,14 @@
                 </button>
               </div>
             </li>
+            <li class="menu__item menu__item_btn-dn">
+              <button class="btn btn_bg-orange">
+                <span class="btn__item">Заказать звонок</span>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
-
 </header>

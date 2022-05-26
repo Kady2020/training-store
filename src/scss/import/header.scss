@@ -1,19 +1,38 @@
 .header {
-  // position: absolute;
-  // width: 100%;
-  // top: 0;
-  // left: 0;
-  // z-index: 100;
+  @media (max-width: 800px) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: $whiteColor;
+    }
+  }
 
   &__body {
-    display: grid;
-    grid-template: minmax(auto, 48px) minmax(auto, 178px) / 1fr;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   &__top {
+    flex: 0 1 48px;
   }
 
   &__bottom {
+    flex: 0 1 178px;
+
+    @media (max-width: 800px) {
+      flex: 0 1 auto;
+    }
   }
 }
 
@@ -26,9 +45,6 @@
     align-items: center;
     height: 100%;
     gap: 15px;
-  }
-
-  &__icon {
   }
 
   &__location {
@@ -44,15 +60,17 @@
 
   &__location-city {
     font-weight: 600;
-    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 .bottom-header {
   &__container {
-    position: relative;
     font-size: 13px;
-    padding: 20px 15px;
   }
 
   &__body {
@@ -63,25 +81,23 @@
     padding: 20px 0;
     border-bottom: 1px solid #e3e3e3;
 
-    @media (max-width: 767.98px) {
-      gap: 15px;
+    @media (max-width: 991.98px) {
+      grid-template: 1fr / auto 1fr minmax(auto, 200px);
+    }
+
+    @media (max-width: 800px) {
+      grid-template: 1fr / auto 1fr auto;
+      padding: 10px 0;
+      border-bottom: none;
     }
   }
 
   &__logo {
-    max-width: 80px;
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 991.98px) {
-      max-width: 60px;
-    }
+    grid-column: 1/2;
   }
 
   &__contacts {
+    grid-column: 2/3;
     display: grid;
     grid-template: 1fr / repeat(3, 1fr);
     align-items: start;
@@ -89,10 +105,17 @@
 
     @media (max-width: 991.98px) {
       grid-template: 1fr / repeat(2, 1fr);
+      justify-items: end;
+      gap: 15px;
     }
 
-    @media (max-width: 767.98px) {
-      grid-template: 1fr / 1fr;
+    @media (max-width: 600px) {
+      grid-template: 1fr / repeat(2, auto);
+      align-items: center;
+    }
+
+    @media (max-width: 520px) {
+      grid-template: 1fr / auto;
     }
   }
 
@@ -107,7 +130,7 @@
     .icon-location,
     .icon-email,
     .icon-call {
-      align-items: flex-start;
+      align-items: start;
       color: $orangeColor;
       font-size: 30px;
     }
@@ -125,8 +148,13 @@
 
   &__email {
     align-items: center;
+    transform: translateY(-5px);
 
-    @media (max-width: 767.98px) {
+    @media (max-width: 600px) {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 520px) {
       display: none;
     }
   }
@@ -134,10 +162,14 @@
   &__email-text {
     font-weight: 600;
     @include respValue('font-size', 15, 13, 1);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__call {
-    @media (max-width: 502px) {
+    @media (max-width: 600px) {
       align-items: center;
     }
   }
@@ -150,65 +182,133 @@
   &__call-number {
     font-weight: 600;
     @include respValue('font-size', 15, 13, 1);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__call-time {
     color: $grayColor;
 
-    @media (max-width: 502px) {
+    @media (max-width: 600px) {
       display: none;
     }
   }
 
-  &__button {
-  }
+  &__btn {
+    grid-column: 3/4;
 
-  &__menu {
-    position: sticky;
-    top: 0;
-    // @media (max-width: 767.98px) {
-    //   position: fixed;
-    //   width: 100%;
-    //   height: 100%;
-    //   top: -100%;
-    //   left: 0;
-    //   background: $blackColor;
-    //   padding: 150px 0 0 0;
-    //   overflow: auto;
-    //   transition: all 0.3s linear;
-
-    //   &.active {
-    //     top: 0;
-    //   }
-    // }
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 }
 
 .menu {
-  transition: all 0.1s linear;
   padding: 5px 0;
+  transition: all 0.1s linear;
+
+  .menu__item_logo-dn,
+  .menu__item_btn-dn {
+    display: none;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  @media (max-width: 800px) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background: #dfdede;
+    padding: 50px 0 0 0;
+    overflow: auto;
+    transition: all 0.2s linear;
+
+    &._active {
+      top: 0;
+    }
+  }
+
+  &.menu-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
+    background: $whiteColor;
+
+    .menu__item_logo-dn {
+      display: block;
+    }
+
+    .search-box {
+      margin: 0 0 0 25px;
+
+      &.active {
+        max-width: 150px;
+      }
+
+      &._active {
+        margin: 0;
+
+        &.active {
+          max-width: 200px;
+        }
+      }
+    }
+
+    .cancel-btn {
+      &.active {
+        right: 155px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      top: -100%;
+
+      &._active {
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #dfdede;
+        padding: 50px 0 0 0;
+        overflow: auto;
+        transition: all 0.2s linear;
+      }
+    }
+  }
 
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 60px;
+
+    &._active {
+      flex-direction: column;
+      align-items: stretch;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 15px;
+      gap: 30px;
+    }
   }
 
   &__item {
     position: relative;
+    padding: 0 5px;
 
-    &_logo {
-      max-width: 60px;
-
-      img {
-        width: 100%;
-        object-fit: cover;
+    .close-link {
+      &._active {
+        font-size: 24px;
       }
     }
-  }
-
-  &__logo {
   }
 
   &__button {
@@ -222,9 +322,6 @@
         transform: rotate(180deg);
       }
     }
-  }
-
-  &__button-text {
   }
 
   &__button-arrow {
@@ -244,16 +341,113 @@
     > *:not(:last-child) {
       margin: 0 0 10px 0;
     }
+
+    &._active {
+      position: relative;
+      top: 10px;
+      background: $whiteColor;
+    }
   }
 
   &__sub-link {
     display: block;
     font-size: 14px;
+
+    &._active {
+      font-size: 18px;
+    }
   }
 
   &__link {
     font-weight: 500;
     font-size: 15px;
+  }
+
+  &__button {
+    &._active {
+      font-size: 24px;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  max-width: 80px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 991.98px) {
+    max-width: 60px;
+  }
+
+  @media (max-width: 425px) {
+    max-width: 40px;
+  }
+}
+
+.burger {
+  display: none;
+
+  @media (max-width: 800px) {
+    grid-column: 3/4;
+    justify-self: end;
+    display: block;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    transition: all 0.2s linear;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 1.6px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $blackColor;
+      transition: all 0.2s linear;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1.6px;
+      background: $blackColor;
+      transition: all 0.2s linear;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &._active {
+      span {
+        transform: scale(0);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+    }
   }
 }
 
@@ -282,6 +476,14 @@
     &.active {
       opacity: 1;
       visibility: visible;
+    }
+  }
+
+  &._active {
+    input {
+      opacity: 1;
+      visibility: visible;
+      background: $whiteColor;
     }
   }
 
@@ -319,8 +521,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    transition: all 0.3s linear;
+    font-size: 24px;
+    transition: all 0.2s linear;
     opacity: 0;
     visibility: hidden;
 
@@ -330,9 +532,18 @@
       opacity: 1;
       visibility: visible;
     }
+
+    &._active {
+      display: none;
+    }
   }
 
   &.active {
+    max-width: 180px;
+    width: 100%;
+  }
+
+  &._active {
     max-width: 180px;
     width: 100%;
   }

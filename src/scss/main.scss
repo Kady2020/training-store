@@ -179,6 +179,45 @@ body {
 }
 //! button
 
+//! underline
+.tdu {
+  @media (min-width: 800px) {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      transform: scale(0);
+      transform-origin: left;
+      transition: all 0.2s linear;
+    }
+
+    &_oc {
+      &::before {
+        background: $orangeColor;
+      }
+    }
+
+    &_bc {
+      &::before {
+        background: $blackColor;
+      }
+    }
+
+    &:hover {
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+}
+//! underline
+
 /*==================== REPEAT BLOCK ====================*/
 
 @import 'import/header.scss';
