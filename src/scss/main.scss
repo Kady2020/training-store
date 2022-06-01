@@ -75,15 +75,15 @@ body {
 .page {
   flex: 1 1 auto;
 
-  &__block-name,
-  &__block-name {
+  &__intro,
+  &__call-back {
     &:not(:last-child) {
-      @include respValue('margin-bottom', 90, 60, 1);
+      @include respValue('margin-bottom', 180, 60, 1);
     }
   }
 
   &:not(:last-child) {
-    @include respValue('margin-bottom', 120, 90, 1);
+    @include respValue('margin-bottom', 200, 100, 1);
   }
 }
 /*==================== BASIC PARAMETERS ====================*/
@@ -218,8 +218,23 @@ body {
 }
 //! underline
 
+// ! header block
+.header-block {
+  &__title {
+    @include respValue('font-size', 34, 28, 1);
+  }
+
+  &__text {
+    font-weight: 300;
+    color: rgba(26, 26, 26, 0.9);
+  }
+}
+
+// ! header block
+
 /*==================== REPEAT BLOCK ====================*/
 
 @import 'import/header.scss';
 @import 'import/intro.scss';
 @import 'import/footer.scss';
+@import 'import/call-back.scss';
