@@ -156,11 +156,11 @@ body {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__call-back:not(:last-child) {
+.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__advantages:not(:last-child) {
   margin-bottom: 180px;
 }
 @media (max-width: 1310px) {
-  .page__intro:not(:last-child), .page__call-back:not(:last-child) {
+  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__advantages:not(:last-child) {
     margin-bottom: calc(60px + 120 * ((100vw - 320px) / 990));
   }
 }
@@ -284,6 +284,9 @@ body {
   }
 }
 
+.header-block > *:not(:last-child) {
+  margin: 0 0 18px 0;
+}
 .header-block__title {
   font-size: 34px;
 }
@@ -1259,5 +1262,83 @@ body {
     grid-column: 2/3;
     grid-row: 2/3;
     justify-self: end;
+  }
+}
+
+.advantages__body {
+  display: grid;
+  row-gap: 40px;
+}
+@media (min-width: 991.98px) {
+  .advantages__body {
+    grid-template: 1fr/minmax(auto, 370px) 1fr;
+    column-gap: 100px;
+  }
+}
+@media (min-width: 991.98px) and (max-width: 1310px) {
+  .advantages__body {
+    column-gap: calc(10px + 90 * ((100vw - 320px) / 990));
+  }
+}
+.advantages__header {
+  max-width: 500px;
+}
+.advantages__items {
+  display: grid;
+  gap: 40px;
+}
+@media (max-width: 1310px) {
+  .advantages__items {
+    gap: calc(25px + 15 * ((100vw - 320px) / 990));
+  }
+}
+@media (min-width: 425.98px) {
+  .advantages__items {
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  }
+}
+.advantages__icon {
+  max-width: 70px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.advantages__icon img {
+  width: 100%;
+}
+.advantages__icon:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media (max-width: 1310px) {
+  .advantages__icon:not(:last-child) {
+    margin-bottom: calc(25px + 15 * ((100vw - 320px) / 990));
+  }
+}
+.advantages__title {
+  font-weight: 500;
+  font-size: 24px;
+}
+@media (max-width: 1310px) {
+  .advantages__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 990));
+  }
+}
+.advantages__title:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media (max-width: 1310px) {
+  .advantages__title:not(:last-child) {
+    margin-bottom: calc(15px + 5 * ((100vw - 320px) / 990));
+  }
+}
+.advantages__text {
+  font-weight: 300;
+  color: rgba(26, 26, 26, 0.9);
+}
+.advantages__text:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media (max-width: 1310px) {
+  .advantages__text:not(:last-child) {
+    margin-bottom: calc(15px + 5 * ((100vw - 320px) / 990));
   }
 }

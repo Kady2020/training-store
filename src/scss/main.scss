@@ -76,7 +76,8 @@ body {
   flex: 1 1 auto;
 
   &__intro,
-  &__call-back {
+  &__call-back,
+  &__advantages {
     &:not(:last-child) {
       @include respValue('margin-bottom', 180, 60, 1);
     }
@@ -220,6 +221,10 @@ body {
 
 // ! header block
 .header-block {
+  > *:not(:last-child) {
+    margin: 0 0 18px 0;
+  }
+
   &__title {
     @include respValue('font-size', 34, 28, 1);
   }
@@ -238,3 +243,4 @@ body {
 @import 'import/intro.scss';
 @import 'import/footer.scss';
 @import 'import/call-back.scss';
+@import 'import/advantages.scss';
