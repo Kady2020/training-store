@@ -2291,7 +2291,7 @@ button.swiper-pagination-bullet {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 3px;
   bottom: -1px;
   left: 0;
   background: #fea803;
