@@ -1,0 +1,148 @@
+@import '../../../node_modules/swiper/swiper';
+@import '../../../node_modules/swiper/swiper-bundle';
+
+.services {
+  &__body {
+    min-width: 0;
+  }
+
+  &__menu {
+    &:not(:last-child) {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    line-height: 2.5;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      background: $orangeColor;
+      transform: scale(0);
+      transform-origin: center;
+      transition: all 0.2s linear;
+    }
+
+    &._act {
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__swiper-inner {
+    padding: 0 0 60px 0;
+  }
+
+  &__swiper-inner-slide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 305px));
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__swiper-inner-slide-item {
+    > *:not(:last-child) {
+      margin: 0 0 16px 0;
+    }
+  }
+
+  &__image {
+    padding: 0 0 63.28% 0;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(100, 194, 158, 0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s linear;
+      z-index: 3;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__service-name {
+    font-weight: 500;
+    font-size: 18px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__service-price {
+    ont-size: 12px;
+    color: $grayColor;
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $blackColor;
+  border-radius: 50%;
+  background: $whiteColor;
+  color: $blackColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+
+  &-active {
+    opacity: 1;
+  }
+}

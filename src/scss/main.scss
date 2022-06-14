@@ -77,7 +77,8 @@ body {
 
   &__intro,
   &__call-back,
-  &__advantages {
+  &__advantages,
+  &__services {
     &:not(:last-child) {
       @include respValue('margin-bottom', 180, 60, 1);
     }
@@ -233,6 +234,10 @@ body {
     font-weight: 300;
     color: rgba(26, 26, 26, 0.9);
   }
+
+  &:not(:last-child) {
+    @include respValue('margin-bottom', 60, 30, 1);
+  }
 }
 
 // ! header block
@@ -244,3 +249,4 @@ body {
 @import 'import/footer.scss';
 @import 'import/call-back.scss';
 @import 'import/advantages.scss';
+@import 'import/services.scss';
