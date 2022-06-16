@@ -1,0 +1,27 @@
+.stblock {
+  &__body {
+    display: grid;
+    gap: 30px;
+
+    @media (min-width: 768.98px) {
+      grid-template: 1fr / repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__image {
+    padding: 0 0 56% 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__text {
+    line-height: 1.2;
+    letter-spacing: 0.6px;
+  }
+}

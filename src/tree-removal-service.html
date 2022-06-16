@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {
+"title":"Удаление деревьев"
+})
+
+<body>
+  <!-- WRAPPER -->
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    @@include('html/header.html',{})
+
+    <!-- PAGE -->
+    <main class="page">
+
+      <!-- INTRO -->
+      <section class="page__intro intro">
+        <div class="intro__content">
+          <div class="intro__container">
+            <div class="intro__body">
+              <h1 class="intro__title">Удаление деревьев</h1>
+              <p class="intro__text">
+                Профессионально оказываем любые услуги методом промышленного (строительного) альпинизма. Только
+                квалифицированные
+                рабочие с опытом более 3 лет!
+              </p>
+              <button class="intro__btn btn btn_bg-orange">
+                <span class="btn__item">Заказать услугу</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="intro__image">
+          <img src="@img/services/treeremove1.png" alt="Фото удаления дерева">
+        </div>
+      </section>
+
+      <!-- STANDART BLOCK -->
+      <section class="page__stblock stblock">
+        <div class="stblock__container">
+          <div class="stblock__body">
+            <div class="stblock__image ibg">
+              <img src="@img/services/treeremove2.png" alt="Фото удаления дерева">
+            </div>
+            <div class="stblock__content">
+              <p class="stblock__text">
+                «Тигрис» — компания, оказывающая услуги в сфере промышленного альпинизма. С 2017 года мы занимаемся
+                высотными работами
+                не только в Москве и московской области, но и по всей России.
+              </p>
+              <p class="stblock__text">
+                В «Тигрис» работает 145 квалифицированных промышленных альпинистов, готовых решать любые поставленные
+                перед ними задачи.
+                Все альпинисты имеют специализированный сертификат, подтверждающий их компетенцию.
+              </p>
+              <button class="stblock__btn btn btn_bg-orange">
+                <span class="btn__item">Заказать услугу</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADVANTAGES -->
+      @@include('html/advantages.html',{})
+
+      <!-- CALL BACK -->
+      @@include('html/call-back.html',{})
+
+    </main>
+
+    <!-- FOOTER -->
+    @@include('html/footer.html',{})
+
+  </div>
+
+  <!-- IONICONS -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- MAIN.JS -->
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

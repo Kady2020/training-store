@@ -47,6 +47,8 @@
 
   &__image {
     position: relative;
+    border-radius: 2px;
+    overflow: hidden;
 
     img {
       position: absolute;

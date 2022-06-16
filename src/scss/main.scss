@@ -77,15 +77,16 @@ body {
 
   &__intro,
   &__call-back,
+  &__stblock,
   &__advantages,
   &__services {
     &:not(:last-child) {
-      @include respValue('margin-bottom', 180, 60, 1);
+      @include respValue('margin-bottom', 120, 60, 1);
     }
   }
 
   &:not(:last-child) {
-    @include respValue('margin-bottom', 200, 100, 1);
+    @include respValue('margin-bottom', 180, 90, 1);
   }
 }
 /*==================== BASIC PARAMETERS ====================*/
@@ -250,3 +251,4 @@ body {
 @import 'import/call-back.scss';
 @import 'import/advantages.scss';
 @import 'import/services.scss';
+@import 'import/stblock.scss';
