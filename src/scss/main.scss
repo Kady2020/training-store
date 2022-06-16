@@ -79,6 +79,7 @@ body {
   &__call-back,
   &__stblock,
   &__advantages,
+  &__typesjo,
   &__services {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
@@ -252,3 +253,4 @@ body {
 @import 'import/advantages.scss';
 @import 'import/services.scss';
 @import 'import/stblock.scss';
+@import 'import/types-jobs.scss';

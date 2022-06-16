@@ -1,0 +1,32 @@
+.typesjo {
+  &__body {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__header,
+  &__item {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    align-items: center;
+    gap: 30px;
+    padding: 0 30px;
+    min-height: 40px;
+
+    @media (max-width: 625.98px) {
+      padding: 0 5px;
+    }
+  }
+
+  &__header {
+    background: $blackColor;
+    color: $whiteColor;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+  }
+
+  &__header-price,
+  &__item-price {
+    justify-self: end;
+  }
+}

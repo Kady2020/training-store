@@ -156,11 +156,11 @@ body {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__services:not(:last-child) {
+.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__services:not(:last-child) {
   margin-bottom: 120px;
 }
 @media (max-width: 1310px) {
-  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__services:not(:last-child) {
+  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__services:not(:last-child) {
     margin-bottom: calc(60px + 60 * ((100vw - 320px) / 990));
   }
 }
@@ -2395,4 +2395,31 @@ button.swiper-pagination-bullet {
 .stblock__text {
   line-height: 1.2;
   letter-spacing: 0.6px;
+}
+
+.typesjo__body {
+  display: grid;
+  gap: 10px;
+}
+.typesjo__header, .typesjo__item {
+  display: grid;
+  grid-template: 1fr/repeat(2, 1fr);
+  align-items: center;
+  gap: 30px;
+  padding: 0 30px;
+  min-height: 40px;
+}
+@media (max-width: 625.98px) {
+  .typesjo__header, .typesjo__item {
+    padding: 0 5px;
+  }
+}
+.typesjo__header {
+  background: #1a1a1a;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+.typesjo__header-price, .typesjo__item-price {
+  justify-self: end;
 }
