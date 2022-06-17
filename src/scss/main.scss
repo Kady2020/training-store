@@ -80,6 +80,8 @@ body {
   &__stblock,
   &__advantages,
   &__typesjo,
+  &__install-features,
+  &__answers,
   &__services {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
@@ -254,3 +256,4 @@ body {
 @import 'import/services.scss';
 @import 'import/stblock.scss';
 @import 'import/types-jobs.scss';
+@import 'import/answers.scss';

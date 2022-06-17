@@ -156,11 +156,11 @@ body {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__services:not(:last-child) {
+.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__services:not(:last-child) {
   margin-bottom: 120px;
 }
 @media (max-width: 1310px) {
-  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__services:not(:last-child) {
+  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__services:not(:last-child) {
     margin-bottom: calc(60px + 60 * ((100vw - 320px) / 990));
   }
 }
@@ -2400,6 +2400,7 @@ button.swiper-pagination-bullet {
 .typesjo__body {
   display: grid;
   gap: 10px;
+  border-bottom: 1px solid #d1d1d1;
 }
 .typesjo__header, .typesjo__item {
   display: grid;
@@ -2422,4 +2423,64 @@ button.swiper-pagination-bullet {
 }
 .typesjo__header-price, .typesjo__item-price {
   justify-self: end;
+}
+
+.answers__body {
+  display: grid;
+  row-gap: 30px;
+}
+@media (min-width: 857.98px) {
+  .answers__body {
+    grid-template: 1fr/auto 1fr;
+    column-gap: 120px;
+  }
+}
+@media (min-width: 857.98px) and (max-width: 1310px) {
+  .answers__body {
+    column-gap: calc(60px + 60 * ((100vw - 320px) / 990));
+  }
+}
+.answers__header:not(:last-child) {
+  margin: 0;
+}
+.answers__spoilers {
+  display: grid;
+  row-gap: 30px;
+}
+@media (max-width: 1310px) {
+  .answers__spoilers {
+    row-gap: calc(20px + 10 * ((100vw - 320px) / 990));
+  }
+}
+.answers__title-wrapper {
+  padding: 4px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.answers__title-wrapper.active .answers__btn {
+  transform: rotate(180deg);
+  transform-origin: center;
+  border: 1px solid #fea803;
+  color: #fea803;
+}
+.answers__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.answers__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1a1a1a;
+  border-radius: 20px;
+  padding: 10px;
+  transition: all 0.2s linear;
+}
+.answers__text {
+  display: none;
+  padding: 30px 50px 0 0;
 }
