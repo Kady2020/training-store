@@ -82,6 +82,7 @@ body {
   &__typesjo,
   &__install-features,
   &__answers,
+  &__reviews,
   &__services {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
@@ -257,3 +258,5 @@ body {
 @import 'import/stblock.scss';
 @import 'import/types-jobs.scss';
 @import 'import/answers.scss';
+@import 'import/reviews-block.scss';
+@import 'import/reviews.scss';

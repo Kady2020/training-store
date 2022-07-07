@@ -133,6 +133,48 @@
       <!-- CALL BACK -->
       @@include('html/call-back.html',{})
 
+      <!-- REVIEWS -->
+      <section class="page__reviews reviews">
+        <div class="reviews__container">
+          <div class="reviews__body">
+            <div class="reviews__header header-block">
+              <h2 class="header-block__title">
+                Отзывы
+              </h2>
+            </div>
+
+            <div class="reviews__slider-swiper swiper">
+              <div class="reviews__slider-wrapper swiper-wrapper">
+                <div class="reviews__slider-slide swiper-slide">
+                  @@include('html/reviews-block.html',{})
+                </div>
+                <div class="reviews__slider-slide swiper-slide">
+                  @@include('html/reviews-block.html',{})
+                </div>
+                <div class="reviews__slider-slide swiper-slide">
+                  @@include('html/reviews-block.html',{})
+                </div>
+                <div class="reviews__slider-slide swiper-slide">
+                  @@include('html/reviews-block.html',{})
+                </div>
+                <div class="reviews__slider-slide swiper-slide">
+                  @@include('html/reviews-block.html',{})
+                </div>
+              </div>
+            </div>
+
+            <div class="reviews__arrow-box">
+              <div class="reviews__btn-left">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </div>
+              <div class="reviews__btn-right">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- FOOTER -->

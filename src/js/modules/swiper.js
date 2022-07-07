@@ -1,5 +1,5 @@
 import Swiper, {
-  Mousewheel, HashNavigation, Pagination, Keyboard,
+  Mousewheel, HashNavigation, Pagination, Keyboard, Autoplay, Navigation
 } from 'swiper';
 
 let servSw = new Swiper('.services__swiper', {
@@ -103,3 +103,47 @@ function menuSliderRemove() {
 }
 
 servSw.init();
+
+new Swiper('.reviews__slider-swiper', {
+  modules: [
+    Mousewheel, Autoplay, Navigation, Keyboard
+  ],
+
+  mousewheel: {
+    sensitivity: 1,
+  },
+
+  autoplay: {
+    delay: 3500,
+    stopOnLastSlide: false,
+    disableOnInteraction: true,
+  },
+  speed: 1200,
+
+  navigation: {
+    nextEl: '.reviews__btn-right',
+    prevEl: '.reviews__btn-left',
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    UpDown: true,
+  },
+
+  simulateTouch: true,
+
+  slidesPerView: 1,
+
+  slidesPerGroup: 1,
+
+  watchOverflow: true,
+
+  observer: true,
+
+  observeParents: true,
+
+  observeSlideChildren: true,
+
+  nested: true,
+});
