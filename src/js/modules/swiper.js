@@ -147,3 +147,94 @@ new Swiper('.reviews__slider-swiper', {
 
   nested: true,
 });
+
+new Swiper('.projects__slider-swiper', {
+  modules: [
+    Mousewheel, Navigation, Keyboard
+  ],
+
+  mousewheel: {
+    sensitivity: 1,
+  },
+
+  navigation: {
+    nextEl: '.projects__btn-right',
+    prevEl: '.projects__btn-left',
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    UpDown: true,
+  },
+
+  simulateTouch: true,
+
+  slidesPerView: 1,
+
+  freeMode: true,
+
+  slidesPerGroup: 1,
+
+  spaceBetween: 20,
+
+  watchOverflow: true,
+
+  observer: true,
+
+  observeParents: true,
+
+  observeSlideChildren: true,
+
+  nested: true,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    520: {
+      slidesPerView: 2,
+    },
+    767.98: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+new Swiper('.specialists__slider-swiper', {
+  modules: [
+    Mousewheel, Keyboard
+  ],
+
+  mousewheel: {
+    sensitivity: 1,
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    UpDown: true,
+  },
+
+  simulateTouch: true,
+
+  slidesPerView: 4,
+
+  freeMode: true,
+
+  slidesPerGroup: 1,
+
+  spaceBetween: 20,
+
+  watchOverflow: true,
+
+  observer: true,
+
+  observeParents: true,
+
+  observeSlideChildren: true,
+
+  nested: true,
+
+  grabCursor: true,
+})

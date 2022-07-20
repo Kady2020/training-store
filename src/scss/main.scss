@@ -83,7 +83,9 @@ body {
   &__install-features,
   &__answers,
   &__reviews,
-  &__services {
+  &__services,
+  &__projects,
+  &__specialists {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
     }
@@ -260,3 +262,5 @@ body {
 @import 'import/answers.scss';
 @import 'import/reviews-block.scss';
 @import 'import/reviews.scss';
+@import 'import/projects.scss';
+@import 'import/specialists.scss';
