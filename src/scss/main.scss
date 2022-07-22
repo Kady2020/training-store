@@ -85,7 +85,8 @@ body {
   &__reviews,
   &__services,
   &__projects,
-  &__specialists {
+  &__specialists,
+  &__service-cost {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
     }
@@ -264,3 +265,4 @@ body {
 @import 'import/reviews.scss';
 @import 'import/projects.scss';
 @import 'import/specialists.scss';
+@import 'import/service-cost.scss';

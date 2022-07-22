@@ -218,7 +218,7 @@ new Swiper('.specialists__slider-swiper', {
 
   simulateTouch: true,
 
-  slidesPerView: 4,
+  slidesPerView: 1,
 
   freeMode: true,
 
@@ -237,4 +237,18 @@ new Swiper('.specialists__slider-swiper', {
   nested: true,
 
   grabCursor: true,
+
+  breakpoints: {
+    767.98: {
+      slidesPerView: 4,
+    },
+
+    580: {
+      slidesPerView: 3,
+    },
+
+    375: {
+      slidesPerView: 2,
+    },
+  },
 })

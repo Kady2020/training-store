@@ -1,0 +1,21 @@
+.service-cost {
+  &__body {
+    .page__typesjo {
+      &:not(:last-child) {
+        @include respValue('margin-bottom', 60, 30, 1);
+      }
+    }
+
+    > *:not(:last-child) {
+      @include respValue('margin-bottom', 60, 30, 1);
+    }
+  }
+
+  &__container {
+    &_center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

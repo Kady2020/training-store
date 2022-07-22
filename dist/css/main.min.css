@@ -156,11 +156,11 @@ body {
 .page {
   flex: 1 1 auto;
 }
-.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__reviews:not(:last-child), .page__services:not(:last-child), .page__projects:not(:last-child), .page__specialists:not(:last-child) {
+.page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__reviews:not(:last-child), .page__services:not(:last-child), .page__projects:not(:last-child), .page__specialists:not(:last-child), .page__service-cost:not(:last-child) {
   margin-bottom: 120px;
 }
 @media (max-width: 1310px) {
-  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__reviews:not(:last-child), .page__services:not(:last-child), .page__projects:not(:last-child), .page__specialists:not(:last-child) {
+  .page__intro:not(:last-child), .page__call-back:not(:last-child), .page__stblock:not(:last-child), .page__advantages:not(:last-child), .page__typesjo:not(:last-child), .page__install-features:not(:last-child), .page__answers:not(:last-child), .page__reviews:not(:last-child), .page__services:not(:last-child), .page__projects:not(:last-child), .page__specialists:not(:last-child), .page__service-cost:not(:last-child) {
     margin-bottom: calc(60px + 60 * ((100vw - 320px) / 990));
   }
 }
@@ -2636,10 +2636,37 @@ button.swiper-pagination-bullet {
 .specialists__image img {
   width: 100%;
 }
+@media (max-width: 375px) {
+  .specialists__image {
+    max-width: 400px;
+  }
+}
 .specialists__name {
   font-weight: 500;
 }
 .specialists__position {
   font-size: 12px;
   color: #868686;
+}
+
+.service-cost__body .page__typesjo:not(:last-child) {
+  margin-bottom: 60px;
+}
+@media (max-width: 1310px) {
+  .service-cost__body .page__typesjo:not(:last-child) {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 990));
+  }
+}
+.service-cost__body > *:not(:last-child) {
+  margin-bottom: 60px;
+}
+@media (max-width: 1310px) {
+  .service-cost__body > *:not(:last-child) {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 990));
+  }
+}
+.service-cost__container_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
