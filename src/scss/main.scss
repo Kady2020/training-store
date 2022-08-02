@@ -86,7 +86,8 @@ body {
   &__services,
   &__projects,
   &__specialists,
-  &__service-cost {
+  &__service-cost,
+  &__about-block {
     &:not(:last-child) {
       @include respValue('margin-bottom', 120, 60, 1);
     }
@@ -236,6 +237,7 @@ body {
 
   &__title {
     @include respValue('font-size', 34, 28, 1);
+    text-transform: uppercase;
   }
 
   &__text {
@@ -266,3 +268,4 @@ body {
 @import 'import/projects.scss';
 @import 'import/specialists.scss';
 @import 'import/service-cost.scss';
+@import 'import/about-block.scss';

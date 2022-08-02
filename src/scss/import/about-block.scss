@@ -1,0 +1,50 @@
+.about-block {
+  &__header {
+    max-width: 332px;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__text-block {
+    display: grid;
+    grid-template: 1fr / repeat(2, auto);
+    align-items: center;
+    column-gap: 30px;
+
+    @media (min-width: 797.98px) {
+      flex: 0 1 412px;
+    }
+  }
+
+  &__vertical-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    white-space: nowrap;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    color: $grayColor;
+  }
+
+  &__text {
+    > *:not(:last-child) {
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__image-block {
+    flex: 0 1 630px;
+    position: relative;
+  }
+
+  &__image {
+    padding: 0 0 60.954% 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__image-inner {
+  }
+}
